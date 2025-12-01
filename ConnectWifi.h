@@ -7,6 +7,7 @@ class ConnectWifi {
   public:
     ConnectWifi(const char* ssid = nullptr, const char* password = nullptr);
     void connectionsMethod();
+    bool connect_status();
 
   private:
     const char* ssid; 

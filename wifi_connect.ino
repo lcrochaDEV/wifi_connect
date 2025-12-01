@@ -9,10 +9,13 @@ ConnectWifi connectWifi = ConnectWifi(SSID, PASSWORD);
 void setup() {
   Serial.begin(115200);
   connectWifi.connectionsMethod();
-
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  bool nonect_wifi = connectWifi.connect_status();
+  if(nonect_wifi == true){
+    Serial.println("Conectado com sucesso!");
+  }else{
+    animations.not_wifi();
+  }
 }
