@@ -16,6 +16,6 @@ void loop() {
   if(nonect_wifi == true){
     Serial.println("Conectado com sucesso!");
   }else{
-    animations.not_wifi();
+     Serial.println("Erro ao Conectado!");
   }
 }
