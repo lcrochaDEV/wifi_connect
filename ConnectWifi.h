@@ -8,8 +8,9 @@ class ConnectWifi {
     ConnectWifi(const char* ssid = nullptr, const char* password = nullptr);
     void connectionsMethod();
     bool connect_status();
+    void accesspoint();
 
-  private:
+  protected:
     const char* ssid; 
     const char* password;
 };
