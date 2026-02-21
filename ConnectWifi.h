@@ -9,6 +9,10 @@ class ConnectWifi {
     void connectionsMethod();
     bool connect_status();
     void accesspoint();
+    
+  private:
+    int maxTentativas = 20;
+    int tentativaAtual = 0;
 
   protected:
     const char* ssid; 
