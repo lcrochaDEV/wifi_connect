@@ -1,12 +1,11 @@
 #include "ConnectWifi.h"
 
-//ConnectWifi connectWifi;
-
 #include "ConnectWifi.h"
 
-const char* SSID = "PERIGO";
-const char* PASSWORD = "LIBER@RWIFI";
+//const char* SSID = "PERIGO";
+//const char* PASSWORD = "LIBER@RWIFI";
 
+//ConnectWifi connectWifi;
 ConnectWifi connectWifi = ConnectWifi(SSID, PASSWORD);
 
 void setup() {

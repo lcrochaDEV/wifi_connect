@@ -10,12 +10,13 @@
 
 ConnectWifi::ConnectWifi(const char* ssid, const char* password)
   : ssid(ssid), password(password) {
-    // Variável para contar as tentativas
-    int maxTentativas;
-    int tentativaAtual;
   }
 
 void ConnectWifi::connectionsMethod(){
+  if (ssid == nullptr) {
+        Serial.println("Erro: SSID não fornecido para conexão manual.");
+        return;
+    }
   // 1. Força a desconexão total para limpar o rádio
   WiFi.disconnect(true);
   delay(100);
@@ -45,12 +46,9 @@ void ConnectWifi::connectionsMethod(){
 
 void ConnectWifi::accesspoint(){
   WiFiManager wm; 
-  // 1. Força a desconexão total para limpar o rádio
-  WiFi.disconnect(true);
-  delay(100);
   
   // Configura para reconectar automaticamente se cair
-  WiFi.persistent(false);
+  //WiFi.persistent(false);
   WiFi.setAutoReconnect(true);
   
   //wm.resetSettings();
@@ -59,7 +57,7 @@ void ConnectWifi::accesspoint(){
     Serial.println("Falha na conexão ou tempo esgotado"); 
     return;
   } 
-    connect_status();
+  connect_status();
 }
 
 bool ConnectWifi::connect_status(){
